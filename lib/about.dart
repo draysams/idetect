@@ -1,27 +1,37 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 
-class About extends StatefulWidget {
-  static const String routeName = '/material/cards';
-
+class AboutPage extends StatefulWidget {
   @override
-  _AboutState createState() => new _AboutState();
+  _AboutPageState createState() => new _AboutPageState();
 }
 
-class _AboutState extends State<About> {
-
+class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: const Text('About'),
+      body:new Container(
+         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+       child: new Center(
+         child: new Column(
+           children: <Widget>[
+                new Text(" What iDetect is.", style:new TextStyle(fontWeight:FontWeight.bold,)),
+                new Text("iDetect is an app which incorporates Machine Learning and Artificial Intelligence to detect eye diseases."),
+
+                new Text(" Who can use iDetect.", style:new TextStyle(fontWeight:FontWeight.bold)) ,
+                new Text(" We want our app to be absolutely accessible to anyone, but not to be misused.Through our service, we would like to encourage more poeple to go for regular eye exams even if there are no diseases detected in their eyes"),
+            
+            new Divider(height:20.0,),
+                new Text("Version", style:new TextStyle(fontWeight:FontWeight.bold,fontStyle:FontStyle.italic)),
+                new Text("1.0.7-259532-d213d38", style:new TextStyle(color:Colors.purpleAccent)),
+            new Divider(height:20.0,),
+                new Text("2018 \u00a9 The iDetect Team"),
+           ],
+         )
+       ),
+
+
       ),
-      body: new Center(
-        child: new Text('© iDetect 2017'),
-      )
+      
     );
   }
 }
